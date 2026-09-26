@@ -1,0 +1,311 @@
+/* src/components/styles/main.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Container: Flex row with scroll */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+/* When a panel is expanded, hide scrollbars and lock others */
+.container.has-expanded {
+  overflow-x: hidden;
+}
+
+/* Panel Base */
+.panel {
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 100%;
+  transition:
+    flex 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Home Panel: Fixed sidebar */
+.panel.home-panel {
+  flex: 0 0 400px !important;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  z-index: 20;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Collapsed panels when another is expanded */
+.container.has-expanded .panel:not(.expanded):not(.home-panel) {
+  flex: 0 0 0 !important;
+  min-width: 0;
+  opacity: 0.3;
+  pointer-events: none;
+  filter: blur(2px);
+  transition:
+    flex 0.4s ease,
+    opacity 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* Expanded Panel: Full width */
+.panel.expanded {
+  flex: 1 0 80% !important;
+  min-width: 80vw;
+  z-index: 10;
+  cursor: default;
+}
+
+/* Vertical Text */
+.vertical-text {
+  transform: rotate(-90deg);
+  font-size: 5rem;
+  font-weight: 800;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.panel.expanded .vertical-text,
+.panel.hovered .vertical-text {
+  opacity: 0;
+}
+
+/* Home Panel Content */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.home-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.1em;
+}
+
+.home-role {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.home-icon {
+  font-size: 1.5rem;
+  margin-top: auto;
+  opacity: 0.9;
+}
+
+/* Expanded Content Overlay */
+.panel-expanded-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  z-index: 5;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Marquee */
+.marquee-wrapper {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 3rem;
+  pointer-events: none;
+}
+
+.marquee-text {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.marquee-text span {
+  display: inline-block;
+  padding-right: 5rem;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.panel:hover .marquee-text {
+  animation-play-state: running;
+}
+
+/* Center Content */
+.panel-center {
+  text-align: center;
+  z-index: 2;
+}
+
+.panel-heading {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.panel-subheading {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Large Icon at Lower Left */
+.panel-icon-large {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.panel.expanded:hover .panel-icon-large {
+  transform: scale(1.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Action Button */
+.panel-action-btn {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.panel-action-btn:hover {
+  background: white;
+  color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover preview state */
+.panel.hovered:not(.expanded):not(.home-panel) {
+  z-index: 5;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Smooth transition lock */
+.container.transitioning .panel {
+  transition: flex 0.4s ease !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .vertical-text {
+    font-size: 3.5rem;
+  }
+  .panel-heading {
+    font-size: 2.5rem;
+  }
+  .marquee-text {
+    font-size: 1.4rem;
+  }
+  .panel-icon-large {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel.home-panel {
+    flex: 0 0 60px !important;
+    min-width: 60px;
+  }
+  .home-name {
+    font-size: 1.3rem;
+  }
+}
