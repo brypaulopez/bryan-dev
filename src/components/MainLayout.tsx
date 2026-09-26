@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import Panel from "./Panel";
 import "./styles/main.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const PANELS = [
   "Home",
@@ -13,69 +14,95 @@ const PANELS = [
   "Contact",
 ];
 
+const ROUTES: Record<string, string> = {
+  Home: "/",
+  About: "/about",
+  Services: "/services",
+  Portfolio: "/portfolio",
+  Resume: "/resume",
+  Blog: "/blog",
+  Contact: "/contact",
+};
+
+const getTitleFromPath = (pathname: string) => {
+  if (pathname === "/") return "Home";
+
+  const panel = PANELS.find((title) => ROUTES[title] === pathname);
+
+  return panel || "Home";
+};
+
 export default function MainLayout() {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [expandedPanel, setExpandedPanel] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Handle panel expand/collapse
-  const handlePanelExpand = (title: string) => {
-    if (title === "Home") return; // Home never expands
-    if (expandedPanel === title) {
-      // Already expanded → trigger navigation
-      handleNavigate(title);
-    } else {
-      // Expand new panel
-      setIsTransitioning(true);
-      setExpandedPanel(title);
-      setTimeout(() => setIsTransitioning(false), 400); // Match CSS transition
-    }
-  };
-
-  // Handle navigation after panel is clicked when expanded
-  const handleNavigate = (title: string) => {
-    // Scroll to section
-    const panel = document.getElementById(`${title.toLowerCase()}-panel`);
-    if (panel && containerRef.current) {
-      containerRef.current.scrollTo({
-        left: panel.offsetLeft - 80, // Offset for home sidebar
-        behavior: "smooth",
-      });
-    }
-    // Update URL
-    window.history.pushState(null, "", `#${title.toLowerCase()}`);
-
-    // Optional: collapse after navigation
-    setExpandedPanel(null);
-  };
-
-  // Handle hash navigation on load
+  /*
+   * Keep the expanded panel synchronized with the URL.
+   *
+   * /
+   * /about
+   * /services
+   * etc.
+   */
   useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    const capitalized = hash.charAt(0).toUpperCase() + hash.slice(1);
-    if (PANELS.includes(capitalized) && capitalized !== "Home") {
-      setTimeout(() => {
-        setExpandedPanel(capitalized);
-        handleNavigate(capitalized);
-      }, 100);
-    }
-  }, []);
+    const currentPanel = getTitleFromPath(location.pathname);
 
-  // Close expanded panel when clicking outside (on container)
-  const handleContainerClick = (e: React.MouseEvent) => {
-    if (e.target === containerRef.current && expandedPanel) {
-      setExpandedPanel(null);
+    setExpandedPanel(currentPanel);
+  }, [location.pathname]);
+
+  /*
+   * Navigate to a panel.
+   *
+   * This changes the URL AND tells React Router to render
+   * the corresponding state.
+   */
+  const handleNavigate = (title: string) => {
+    const route = ROUTES[title];
+
+    if (!route) return;
+
+    setIsTransitioning(true);
+
+    navigate(route);
+
+    /*
+     * Give the CSS animation time to finish.
+     */
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 400);
+  };
+
+  /*
+   * Panel clicked while collapsed.
+   *
+   * We immediately route to it.
+   * The URL becomes the source of truth.
+   */
+  const handlePanelExpand = (title: string) => {
+    if (title === "Home") {
+      handleNavigate("Home");
+      return;
     }
+
+    handleNavigate(title);
   };
 
   return (
     <div
       ref={containerRef}
-      className={`container ${isTransitioning ? "transitioning" : ""} ${expandedPanel ? "has-expanded" : ""}`}
-      onClick={handleContainerClick}
+      className={`container ${
+        isTransitioning ? "transitioning" : ""
+      } ${expandedPanel !== "Home" ? "has-expanded" : ""}`}
     >
       {PANELS.map((title) => (
         <Panel
+          key={title}
           title={title}
           isExpanded={expandedPanel === title}
           isHomeFixed={title === "Home"}
