@@ -13,4 +13,5 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/bryan-dev/",
+  // added base: code above for staging / deploying also package.json
 });
