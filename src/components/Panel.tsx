@@ -44,7 +44,6 @@ type PanelProps = {
 export default function Panel({
   title,
   isExpanded,
-  isHomeFixed = true,
   onExpand,
   onNavigate,
 }: PanelProps) {
