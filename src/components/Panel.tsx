@@ -1,5 +1,6 @@
 // src/components/Panel.tsx
-import { useState, useRef, type JSX } from "react";
+import { useState, useRef, type JSX, useEffect } from "react";
+import PanelContent from "./panels/PanelContent";
 
 // Icons (replace with lucide-react for production)
 const PANEL_ICONS: Record<string, JSX.Element> = {
@@ -11,6 +12,16 @@ const PANEL_ICONS: Record<string, JSX.Element> = {
   Blog: <span>✍️</span>,
   Contact: <span>📧</span>,
 };
+
+const NAVIGATION = [
+  "Home",
+  "About",
+  "Services",
+  "Portfolio",
+  "Resume",
+  "Blog",
+  "Contact",
+];
 
 const PANEL_MARQUEE: Record<string, string> = {
   Home: "Welcome • Let's create • ",
@@ -44,6 +55,10 @@ export default function Panel({
   const marqueeText = PANEL_MARQUEE[title] || `${title} • `;
   const isHome = title === "Home";
 
+  useEffect(() => {
+    setIsHovered(false);
+  }, [isExpanded]);
+
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent container click
 
@@ -52,13 +67,7 @@ export default function Panel({
       return;
     }
 
-    if (isExpanded) {
-      // Already expanded → navigate
-      onNavigate(title);
-    } else {
-      // Expand this panel
-      onExpand(title);
-    }
+    onExpand(title);
   };
 
   const handleMouseEnter = () => {
@@ -77,23 +86,23 @@ export default function Panel({
 
   const getBgColor = (title: string) => {
     const colors: Record<string, string> = {
-      Home: "#111",
-      About: "#6c2bd9",
-      Services: "#f97316",
-      Portfolio: "#ec4899",
-      Resume: "#2563eb",
-      Blog: "#fbbf24",
-      Contact: "#16a34a",
+      Home: "#05070A",
+      About: "#08111F",
+      Services: "#0B1F3A",
+      Portfolio: "#123A66",
+      Resume: "#1D5A96",
+      Blog: "#2F80C9",
+      Contact: "#6BB6E8",
     };
     return colors[title] || "#333";
   };
 
   // Calculate flex value
   const getFlexValue = () => {
-    if (isHome) return "0 0 80px"; // Fixed sidebar
-    if (isExpanded) return "1 1 100%"; // Full width
-    if (isHovered) return "2 1 0%"; // Preview hover
-    return "1 1 0%"; // Default collapsed
+    if (isHome) return "0 0 80px";
+    if (isExpanded) return "1 1 100%";
+    if (isHovered) return "2 1 0%";
+    return "1 1 0%";
   };
 
   return (
@@ -116,7 +125,25 @@ export default function Panel({
       {isHome && (
         <div className="home-content">
           <h1 className="home-name">Bryan</h1>
+
           <span className="home-role">Developer</span>
+          {!isExpanded && (
+            <nav className="home-navigation">
+              {NAVIGATION.map((item) => (
+                <button
+                  key={item}
+                  className="home-navigation-item"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onNavigate(item);
+                  }}
+                >
+                  {item}
+                </button>
+              ))}
+            </nav>
+          )}
+
           <div className="home-icon">{icon}</div>
         </div>
       )}
@@ -138,15 +165,13 @@ export default function Panel({
           {/* Center Content (optional - for future content) */}
           <div className="panel-center">
             <h2 className="panel-heading">{title}</h2>
-            {/* <p className="panel-subheading">Click to explore this section</p> */}
-          </div>
 
-          {/* Icon at Lower Left */}
-          <div className="panel-icon-large">{icon}</div>
+            {isExpanded && <PanelContent title={title} />}
+          </div>
 
           {/* Click hint / Close button */}
           <button className="panel-action-btn">
-            {isExpanded ? "Explore Section →" : "Expand"}
+            {isExpanded ? "Close" : "Expand"}
           </button>
         </div>
       )}
