@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Loading...</title>
+
+    <script>
+      const pathSegments = window.location.pathname.split("/").filter(Boolean);
+
+      // First segment is the GitHub repository name
+      const repo = pathSegments.shift();
+
+      const route = "/" + pathSegments.join("/");
+
+      sessionStorage.setItem(
+        "redirect",
+        JSON.stringify({
+          route,
+          search: window.location.search,
+        }),
+      );
+
+      window.location.replace("/" + repo + "/");
+    </script>
+  </head>
+
+  <body>
+    Loading...
+  </body>
+</html>
