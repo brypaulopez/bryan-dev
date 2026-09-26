@@ -1,6 +1,5 @@
 // src/components/Panel.tsx
 import { useState, useRef, type JSX } from "react";
-import { useNavigate } from "react-router-dom";
 
 // Icons (replace with lucide-react for production)
 const PANEL_ICONS: Record<string, JSX.Element> = {
@@ -40,7 +39,6 @@ export default function Panel({
 }: PanelProps) {
   const [isHovered, setIsHovered] = useState(false);
   const panelRef = useRef<HTMLElement>(null);
-  const navigate = useNavigate();
 
   const icon = PANEL_ICONS[title];
   const marqueeText = PANEL_MARQUEE[title] || `${title} • `;
@@ -93,7 +91,7 @@ export default function Panel({
   // Calculate flex value
   const getFlexValue = () => {
     if (isHome) return "0 0 80px"; // Fixed sidebar
-    if (isExpanded) return "1 0 100%"; // Full width
+    if (isExpanded) return "1 1 100%"; // Full width
     if (isHovered) return "2 1 0%"; // Preview hover
     return "1 1 0%"; // Default collapsed
   };

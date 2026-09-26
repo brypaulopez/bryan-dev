@@ -76,7 +76,6 @@ export default function MainLayout() {
     >
       {PANELS.map((title) => (
         <Panel
-          key={title}
           title={title}
           isExpanded={expandedPanel === title}
           isHomeFixed={title === "Home"}
