@@ -4,13 +4,12 @@
 
 .services-content {
   width: 100%;
-
-  margin-top: 100px;
-
-  height: 550px;
+  margin-top: 80px;
+  min-height: 500px;
+  max-height: calc(100dvh - 230px);
   overflow-y: auto;
 
-  padding: 0 48px 100px;
+  padding: 0 48px 70px;
 
   box-sizing: border-box;
 }
@@ -25,13 +24,12 @@
 
 .services-content::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.03);
-  border-radius: 999px;
 }
 
 .services-content::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #6bb6e8, #2f80c9, #123a66);
 
-  border-radius: 999px;
+  border-radius: 10px;
 }
 
 .services-content::-webkit-scrollbar-thumb:hover {
@@ -340,7 +338,6 @@
 @media (max-width: 768px) {
   .services-content {
     margin-top: 80px;
-
     padding: 0 32px 80px;
   }
 
@@ -381,7 +378,6 @@
 @media (max-width: 425px) {
   .services-content {
     margin-top: 60px;
-
     padding: 0 24px 70px;
   }
 

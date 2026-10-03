@@ -4,16 +4,12 @@
 
 .blog-content {
   width: 100%;
-  height: 63vh;
-
-  margin-top: 100px;
-
+  min-height: 500px;
+  max-height: calc(100dvh - 230px);
+  margin-top: 80px;
   overflow-y: auto;
-
   padding: 0 48px 100px;
-
   box-sizing: border-box;
-
   color: #06111e;
 }
 
@@ -301,38 +297,29 @@
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   padding: 30px;
 
-  background: rgba(3, 8, 14, 0.75);
+  box-sizing: border-box;
 
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.78);
+
+  backdrop-filter: blur(8px);
 
   overflow: hidden;
 }
 
 .blog-modal-box {
   position: relative;
-
-  width: min(800px, 100%);
-
+  width: min(900px, 100%);
   max-height: 90vh;
-
   overflow-y: auto;
-
-  padding: 55px;
-
+  padding: 45px;
   box-sizing: border-box;
-
-  background: #08111f;
-
-  color: #ffffff;
-
-  border: 1px solid rgba(107, 182, 232, 0.2);
-
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #07111d;
+  color: #fff;
 }
 
 .blog-modal-box::-webkit-scrollbar {
@@ -512,8 +499,15 @@
    TABLET
 ========================================================= */
 @media (max-width: 1024px) {
-  .blog-content {
-    height: 67vh;
+  .blog-modal {
+    padding: 18px;
+    justify-content: end;
+  }
+  .blog-modal-box {
+    min-width: 60vw;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 40px 30px;
   }
 }
 
@@ -546,7 +540,8 @@
 
   .blog-modal-box {
     max-height: 92vh;
-    width: 89vw;
+    min-width: 60vw;
+    max-width: 88vw;
     padding: 40px 30px;
   }
 
@@ -611,8 +606,9 @@
   }
 
   .blog-modal-box {
-    max-height: 94vh;
-    width: 82vw;
+    min-width: 60vw;
+    max-width: 82dvw;
+    max-height: 85vh;
     padding: 35px 20px 30px;
   }
 
@@ -663,6 +659,12 @@
     justify-content: end;
   }
 
+  .blog-modal-box {
+    max-height: 80vh;
+    min-width: 60vw;
+    max-width: 81vw;
+  }
+
   .blog-modal-header h3 {
     font-size: 30px;
   }
@@ -705,8 +707,9 @@
   }
 
   .blog-modal-box {
-    max-height: 96vh;
-    width: 78vw;
+    max-height: 80vh;
+    min-width: 60vw;
+    max-width: 79vw;
     padding: 28px 14px;
   }
 

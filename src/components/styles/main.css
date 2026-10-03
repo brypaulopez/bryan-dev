@@ -555,7 +555,9 @@ body {
   }
 
   .panel-action-btn {
-    position: unset;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.3rem;
     margin: 0 2rem;
   }
 }
@@ -566,7 +568,9 @@ body {
   }
 
   .panel-action-btn {
-    position: unset;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.3rem;
     font-size: 12px;
     padding: 1rem;
     margin: 10px;
@@ -578,7 +582,9 @@ body {
     padding: 3rem 0 0 0;
   }
   .panel-action-btn {
-    position: unset;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.3rem;
     font-size: 12px;
     padding: 1rem;
     margin: 5px;
@@ -590,7 +596,9 @@ body {
     padding: 3rem 0 0 0;
   }
   .panel-action-btn {
-    position: unset;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.3rem;
     font-size: 12px;
     padding: 0.8rem;
     margin: 2px;

@@ -4,14 +4,11 @@
 
 .resume-content {
   width: 100%;
-  height: 89vh;
-
-  margin-top: 100px;
-
+  min-height: 500px;
+  max-height: calc(100dvh - 230px);
+  margin-top: 80px;
   overflow-y: auto;
-
   padding: 0 48px 100px;
-
   box-sizing: border-box;
 }
 

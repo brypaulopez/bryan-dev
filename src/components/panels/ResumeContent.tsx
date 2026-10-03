@@ -6,7 +6,7 @@ import "../styles/resume.css";
 
 // PDF.js worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
+  "pdfjs-dist/legacy/build/pdf.worker.min.mjs",
   import.meta.url,
 ).toString();
 
@@ -48,6 +48,9 @@ const ResumeContent = () => {
         <Document
           file={resumePath}
           onLoadSuccess={onDocumentLoadSuccess}
+          onLoadError={(error) => {
+            console.error("PDF LOAD ERROR:", error);
+          }}
           loading={<div className="resume-loading">Loading resume...</div>}
           error={<div className="resume-error">Unable to load resume.</div>}
         >
