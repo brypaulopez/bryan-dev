@@ -1448,6 +1448,10 @@
     letter-spacing: -2px;
   }
 
+  .portfolio-header p {
+    margin: auto;
+  }
+
   .portfolio-project {
     grid-template-columns: 45px 1fr;
 

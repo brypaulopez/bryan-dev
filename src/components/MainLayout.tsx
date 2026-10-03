@@ -89,7 +89,6 @@ export default function MainLayout() {
       handleNavigate("Home");
       return;
     }
-
     handleNavigate(title);
   };
 

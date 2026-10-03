@@ -226,6 +226,11 @@ body {
   opacity: 0.9;
 }
 
+.home-logo {
+  width: 130px;
+  height: 80px;
+}
+
 /* Expanded Content Overlay */
 .panel-expanded-content {
   position: absolute;
@@ -233,8 +238,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 3rem 0 5rem 0;
   z-index: 5;
+  height: 100%;
   animation: slideUp 0.4s ease;
 }
 
@@ -259,6 +265,122 @@ body {
     transparent 100%
   );
   pointer-events: none;
+}
+
+/* =========================================================
+   LOGO HOME BUTTON
+   ========================================================= */
+
+.home-navigation-logo {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 8px 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.home-navigation-logo img {
+  display: block;
+
+  width: 48px;
+  height: auto;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.home-navigation-logo:hover img {
+  transform: scale(1.08);
+  opacity: 0.8;
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.home-navigation-divider {
+  width: 55%;
+
+  height: 1px;
+
+  margin: 20px auto auto auto;
+
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
+
+.home-navigation-social {
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.home-navigation-social-link {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  width: 100%;
+
+  padding: 6px 0;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  text-decoration: none;
+
+  /* rotate: 90deg; */
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.home-navigation-social-link:hover {
+  color: #6bb6e8;
+
+  transform: translateX(2px);
+}
+
+.home-navigation-social-arrow {
+  font-size: 10px;
+
+  transition: transform 0.2s ease;
+}
+
+.home-navigation-social-link:hover .home-navigation-social-arrow {
+  transform: translate(2px, -2px);
 }
 
 /* Marquee */
@@ -360,6 +482,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
+  z-index: 100;
 }
 
 .panel-action-btn:hover {
@@ -408,11 +531,19 @@ body {
   .panel-expanded-content {
     padding: 3rem 0 0 0;
   }
+  .panel-action-btn {
+    bottom: 0.8rem;
+    right: 1rem;
+  }
+  .home-logo-expanded {
+    width: 180px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 768px) {
   .panel-expanded-content {
-    padding: 3rem 0 0 0;
+    padding: 2.5rem 0 0 0;
   }
 
   .panel.home-panel {

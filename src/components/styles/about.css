@@ -212,7 +212,7 @@
 @media (max-width: 768px) {
   .about-content {
     margin-top: 80px;
-
+    height: 72vh;
     padding: 0 32px 70px;
   }
 
@@ -237,7 +237,7 @@
 @media (max-width: 425px) {
   .about-content {
     margin-top: 60px;
-
+    height: 72vh;
     padding: 0 24px 60px;
   }
 
@@ -281,6 +281,7 @@
   .about-content {
     padding-left: 20px;
     padding-right: 20px;
+    height: 73vh;
   }
 
   .about-intro h2 {
@@ -309,6 +310,7 @@
   .about-content {
     padding-left: 16px;
     padding-right: 16px;
+    height: 73vh;
   }
 
   .about-intro h2 {

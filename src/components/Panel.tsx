@@ -1,17 +1,7 @@
 // src/components/Panel.tsx
-import { useState, useRef, type JSX, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import PanelContent from "./panels/PanelContent";
-
-// Icons (replace with lucide-react for production)
-const PANEL_ICONS: Record<string, JSX.Element> = {
-  Home: <span>🏠</span>,
-  About: <span>👤</span>,
-  Services: <span>⚙️</span>,
-  Portfolio: <span>📁</span>,
-  Resume: <span>📄</span>,
-  Blog: <span>✍️</span>,
-  Contact: <span>📧</span>,
-};
+import { SOCIAL_LINKS } from "../data/socialLinks";
 
 const NAVIGATION = [
   "Home",
@@ -49,8 +39,7 @@ export default function Panel({
 }: PanelProps) {
   const [isHovered, setIsHovered] = useState(false);
   const panelRef = useRef<HTMLElement>(null);
-
-  const icon = PANEL_ICONS[title];
+  const width = window.innerWidth;
   const marqueeText = PANEL_MARQUEE[title] || `${title} • `;
   const isHome = title === "Home";
 
@@ -149,8 +138,41 @@ export default function Panel({
               ))}
             </nav>
           )}
+          <div className="home-navigation-divider" />
+          <div className="home-navigation-social">
+            {SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-navigation-social-link"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                {isExpanded && width > 768 ? (
+                  <span>{social.name}</span>
+                ) : (
+                  <img
+                    src={`${import.meta.env.BASE_URL}icons/${social.name}.svg`}
+                    className="social-icon"
+                    alt={social.name}
+                  />
+                )}
 
-          <div className="home-icon">{icon}</div>
+                <span className="home-navigation-social-arrow">↗</span>
+              </a>
+            ))}
+          </div>
+
+          <div className="home-icon">
+            <img
+              className={isExpanded ? "home-logo-expanded" : "home-logo"}
+              src={`${import.meta.env.BASE_URL}bryan-logo.png`}
+              alt="Bryan Lopez"
+            />
+          </div>
         </div>
       )}
 
