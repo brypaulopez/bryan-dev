@@ -1,21 +1,10 @@
-import { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
 import "../styles/resume.css";
 
-import workerSrc from "pdfjs-dist/legacy/build/pdf.worker.min.mjs?url";
-
-pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
-
 const ResumeContent = () => {
-  const [numPages, setNumPages] = useState<number>(0);
-
   const resumePath = `${import.meta.env.BASE_URL}Bryan-Lopez-Resume.pdf`;
 
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-  };
+  const resumePage1 = `${import.meta.env.BASE_URL}resume/resume-page-1.png`;
+  const resumePage2 = `${import.meta.env.BASE_URL}resume/resume-page-2.png`;
 
   return (
     <div className="resume-content">
@@ -26,13 +15,10 @@ const ResumeContent = () => {
 
           <h2>Experience, skills & background.</h2>
 
-          {numPages > 0 && (
-            <span className="resume-page-count">
-              {numPages} PAGE{numPages !== 1 ? "S" : ""}
-            </span>
-          )}
+          <span className="resume-page-count">02 PAGES</span>
+
           <a
-            href={`${import.meta.env.BASE_URL}Bryan-Lopez-Resume.pdf`}
+            href={resumePath}
             target="_blank"
             rel="noopener noreferrer"
             className="resume-download"
@@ -41,32 +27,30 @@ const ResumeContent = () => {
           </a>
         </div>
       </div>
-      {/* Actual PDF pages */}
-      <div className="resume-document">
-        <Document
-          file={resumePath}
-          onLoadSuccess={onDocumentLoadSuccess}
-          onLoadError={(error) => {
-            console.error("PDF LOAD ERROR:", error);
-          }}
-          loading={<div className="resume-loading">Loading resume...</div>}
-          error={<div className="resume-error">Unable to load resume.</div>}
-        >
-          {Array.from(new Array(numPages), (_, index) => (
-            <div className="resume-page" key={`page_${index + 1}`}>
-              <Page
-                pageNumber={index + 1}
-                width={900}
-                renderTextLayer={true}
-                renderAnnotationLayer={true}
-              />
 
-              <span className="resume-page-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-            </div>
-          ))}
-        </Document>
+      {/* Resume Preview */}
+      <div className="resume-document">
+        {/* Page 01 */}
+        <div className="resume-page">
+          <img
+            src={resumePage1}
+            alt="Bryan Lopez Resume — Page 1"
+            className="resume-page-image"
+          />
+
+          <span className="resume-page-number">01</span>
+        </div>
+
+        {/* Page 02 */}
+        <div className="resume-page">
+          <img
+            src={resumePage2}
+            alt="Bryan Lopez Resume — Page 2"
+            className="resume-page-image"
+          />
+
+          <span className="resume-page-number">02</span>
+        </div>
       </div>
     </div>
   );

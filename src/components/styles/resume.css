@@ -31,6 +31,151 @@
   background: #6bb6e8;
 }
 
+/* =========================================
+   RESUME DOCUMENT PREVIEW
+========================================= */
+
+.resume-document {
+  width: min(800px, 100%);
+  margin: 6px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+/* =========================================
+   INDIVIDUAL RESUME PAGE
+========================================= */
+
+.resume-page {
+  position: relative;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+
+  overflow: hidden;
+}
+
+/* =========================================
+   RESUME IMAGE
+========================================= */
+
+.resume-page-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  object-fit: contain;
+}
+
+/* =========================================
+   PAGE NUMBER
+========================================= */
+
+.resume-page-number {
+  position: absolute;
+
+  bottom: 18px;
+  right: 22px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  color: #123a66;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  padding: 7px 9px;
+
+  border: 1px solid rgba(18, 58, 102, 0.12);
+}
+
+/* =========================================
+   HOVER
+========================================= */
+
+.resume-page {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.resume-page:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .resume-document {
+    gap: 30px;
+  }
+}
+
+/* =========================================
+   MOBILE L
+========================================= */
+
+@media (max-width: 425px) {
+  .resume-document {
+    gap: 25px;
+  }
+
+  .resume-page-number {
+    bottom: 12px;
+    right: 12px;
+
+    font-size: 9px;
+
+    padding: 6px 8px;
+  }
+}
+
+/* =========================================
+   MOBILE M
+========================================= */
+
+@media (max-width: 375px) {
+  .resume-document {
+    gap: 20px;
+  }
+}
+
+/* =========================================
+   MOBILE S
+========================================= */
+
+@media (max-width: 320px) {
+  .resume-document {
+    gap: 16px;
+  }
+
+  .resume-page-number {
+    bottom: 9px;
+    right: 9px;
+
+    padding: 5px 7px;
+
+    font-size: 8px;
+  }
+}
+
 /* =========================================================
    HEADER
 ========================================================= */
@@ -88,12 +233,6 @@
 /* =========================================================
    DOCUMENT AREA
 ========================================================= */
-
-.resume-document {
-  width: min(900px, 100%);
-
-  margin: 0 auto;
-}
 
 /* =========================================================
    INDIVIDUAL RESUME PAGE
