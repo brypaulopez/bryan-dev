@@ -483,6 +483,7 @@ body {
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
   z-index: 100;
+  margin-bottom: 10px !important;
 }
 
 .panel-action-btn:hover {

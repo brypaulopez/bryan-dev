@@ -55,12 +55,14 @@ export default function Panel({
       return;
     }
 
-    onExpand(title);
-
     if (a === "Close") {
       onNavigate("Home");
+      setIsHovered(false);
+
       return;
     }
+    onExpand(title);
+    setIsHovered(false);
   };
 
   const handleMouseEnter = () => {
