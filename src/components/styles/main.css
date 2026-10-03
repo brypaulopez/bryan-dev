@@ -533,7 +533,7 @@ body {
   }
   .panel-action-btn {
     bottom: 2rem;
-    right: 0.5rem;
+    right: 0.1rem;
     right: 1rem;
   }
   .home-logo-expanded {
@@ -558,7 +558,7 @@ body {
   .panel-action-btn {
     position: absolute;
     bottom: 2rem;
-    right: 0.5rem;
+    right: 0.1rem;
     margin: 0 2rem;
   }
 }
@@ -571,7 +571,7 @@ body {
   .panel-action-btn {
     position: absolute;
     bottom: 2rem;
-    right: 0.5rem;
+    right: 0.1rem;
     font-size: 12px;
     padding: 1rem;
     margin: 10px;
@@ -585,7 +585,7 @@ body {
   .panel-action-btn {
     position: absolute;
     bottom: 2rem;
-    right: 0.5rem;
+    right: 0.1rem;
     font-size: 12px;
     padding: 1rem;
     margin: 5px;
@@ -599,7 +599,7 @@ body {
   .panel-action-btn {
     position: absolute;
     bottom: 2rem;
-    right: 0.5rem;
+    right: 0.1rem;
     font-size: 12px;
     padding: 0.8rem;
     margin: 2px;

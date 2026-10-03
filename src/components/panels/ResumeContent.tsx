@@ -6,7 +6,7 @@ import "../styles/resume.css";
 import { pdfjs } from "react-pdf";
 
 // PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
 const ResumeContent = () => {
   const [numPages, setNumPages] = useState<number>(0);
