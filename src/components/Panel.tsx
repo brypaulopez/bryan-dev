@@ -58,7 +58,7 @@ export default function Panel({
     setIsHovered(false);
   }, [isExpanded]);
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent, a: string) => {
     e.stopPropagation(); // Prevent container click
 
     if (isHome) {
@@ -67,6 +67,11 @@ export default function Panel({
     }
 
     onExpand(title);
+
+    if (a === "Close") {
+      onNavigate("Home");
+      return;
+    }
   };
 
   const handleMouseEnter = () => {
@@ -115,14 +120,16 @@ export default function Panel({
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={handleClick}
     >
       {/* Vertical Title (hidden when expanded) */}
       {!isHome && !isExpanded && <h1 className="vertical-text">{title}</h1>}
 
       {/* Home Panel: Always shows name + icon */}
       {isHome && (
-        <div className="home-content">
+        <div
+          className="home-content"
+          onClick={(e) => handleClick(e, isExpanded ? "Close" : "Expand")}
+        >
           <h1 className="home-name">Bryan</h1>
 
           <span className="home-role">Developer</span>
@@ -169,7 +176,10 @@ export default function Panel({
           </div>
 
           {/* Click hint / Close button */}
-          <button className="panel-action-btn">
+          <button
+            className="panel-action-btn"
+            onClick={(e) => handleClick(e, isExpanded ? "Close" : "Expand")}
+          >
             {isExpanded ? "Close" : "Expand"}
           </button>
         </div>

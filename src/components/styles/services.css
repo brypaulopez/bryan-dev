@@ -1,0 +1,517 @@
+/* ========================================
+   SERVICES CONTENT
+======================================== */
+
+.services-content {
+  width: 100%;
+
+  margin-top: 100px;
+
+  height: 550px;
+  overflow-y: auto;
+
+  padding: 0 48px 100px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+.services-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.services-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 999px;
+}
+
+.services-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6bb6e8, #2f80c9, #123a66);
+
+  border-radius: 999px;
+}
+
+.services-content::-webkit-scrollbar-thumb:hover {
+  background: #6bb6e8;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.services-header {
+  max-width: 1100px;
+
+  margin: 0 auto 90px;
+
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+
+  gap: 70px;
+
+  align-items: end;
+}
+
+.services-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+
+  color: #6bb6e8;
+}
+
+.services-header h2 {
+  margin: 0;
+
+  font-size: clamp(2.5rem, 5vw, 4.7rem);
+  line-height: 1.05;
+
+  color: #ffffff;
+}
+
+.services-header h2 span {
+  color: #6bb6e8;
+}
+
+.services-header > p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+/* ========================================
+   SERVICE LIST
+======================================== */
+
+.services-list {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto 110px;
+}
+
+.service-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 90px 1fr 40px;
+
+  gap: 30px;
+
+  padding: 34px 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease;
+}
+
+.service-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.service-item:hover {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  background: rgba(107, 182, 232, 0.035);
+}
+
+/* ========================================
+   SERVICE TOP
+======================================== */
+
+.service-top {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.service-number {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  color: #6bb6e8;
+}
+
+.service-tag {
+  font-size: 0.58rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   SERVICE BODY
+======================================== */
+
+.service-body h3 {
+  margin: 0 0 12px;
+
+  font-size: 1.5rem;
+
+  color: #ffffff;
+}
+
+.service-body p {
+  max-width: 700px;
+
+  margin: 0 0 20px;
+
+  font-size: 0.92rem;
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ========================================
+   TECHNOLOGIES
+======================================== */
+
+.service-technologies {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.service-technologies span {
+  padding: 6px 10px;
+
+  border: 1px solid rgba(107, 182, 232, 0.12);
+  border-radius: 999px;
+
+  font-size: 0.68rem;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ========================================
+   ARROW
+======================================== */
+
+.service-arrow {
+  align-self: center;
+
+  font-size: 1.5rem;
+
+  color: rgba(107, 182, 232, 0.35);
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-item:hover .service-arrow {
+  transform: translate(4px, -4px);
+
+  color: #6bb6e8;
+}
+
+/* ========================================
+   WORKFLOW
+======================================== */
+
+.services-workflow {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto 110px;
+
+  padding-top: 70px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 80px;
+}
+
+.workflow-heading h3 {
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+
+  color: #ffffff;
+}
+
+/* ========================================
+   WORKFLOW STEPS
+======================================== */
+
+.workflow-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.workflow-step {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+
+  gap: 20px;
+
+  padding: 0 0 30px;
+}
+
+.workflow-step > span {
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  color: #6bb6e8;
+}
+
+.workflow-step h4 {
+  margin: 0 0 8px;
+
+  font-size: 1.1rem;
+
+  color: #ffffff;
+}
+
+.workflow-step p {
+  margin: 0;
+
+  font-size: 0.88rem;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================
+   CLOSING
+======================================== */
+
+.services-closing {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 70px 0 120px;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.services-closing h3 {
+  margin: 0 0 25px;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+
+  color: #ffffff;
+}
+
+.services-closing p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ========================================
+   TABLET
+   768px
+======================================== */
+
+@media (max-width: 768px) {
+  .services-content {
+    margin-top: 80px;
+
+    padding: 0 32px 80px;
+  }
+
+  .services-header {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 70px;
+  }
+
+  .services-list {
+    margin-bottom: 80px;
+  }
+
+  .service-item {
+    grid-template-columns: 60px 1fr 30px;
+
+    gap: 20px;
+
+    padding: 28px 10px;
+  }
+
+  .services-workflow {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    margin-bottom: 80px;
+  }
+}
+
+/* ========================================
+   MOBILE L
+   425px
+======================================== */
+
+@media (max-width: 425px) {
+  .services-content {
+    margin-top: 60px;
+
+    padding: 0 24px 70px;
+  }
+
+  .services-header {
+    margin-bottom: 60px;
+  }
+
+  .services-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .services-header > p {
+    font-size: 0.95rem;
+  }
+
+  .service-item {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 30px 5px;
+  }
+
+  .service-item:hover {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .service-top {
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 15px;
+  }
+
+  .service-tag {
+    font-size: 0.55rem;
+  }
+
+  .service-body h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-body p {
+    font-size: 0.9rem;
+  }
+
+  .service-arrow {
+    display: none;
+  }
+
+  .services-workflow {
+    padding-top: 55px;
+
+    margin-bottom: 60px;
+  }
+
+  .workflow-heading h3 {
+    font-size: 2.3rem;
+  }
+
+  .services-closing {
+    padding: 55px 0 90px;
+  }
+}
+
+/* ========================================
+   MOBILE M
+   375px
+======================================== */
+
+@media (max-width: 375px) {
+  .services-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .services-header h2 {
+    font-size: 2.25rem;
+  }
+
+  .service-item {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .service-body h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-technologies {
+    gap: 6px;
+  }
+
+  .service-technologies span {
+    padding: 5px 8px;
+
+    font-size: 0.62rem;
+  }
+}
+
+/* ========================================
+   MOBILE S
+   320px
+======================================== */
+
+@media (max-width: 320px) {
+  .services-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .services-header h2 {
+    font-size: 2rem;
+  }
+
+  .services-eyebrow {
+    font-size: 0.62rem;
+  }
+
+  .service-body h3 {
+    font-size: 1.15rem;
+  }
+
+  .service-body p {
+    font-size: 0.85rem;
+  }
+
+  .services-closing h3 {
+    font-size: 2.2rem;
+  }
+}

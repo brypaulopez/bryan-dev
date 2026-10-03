@@ -1,134 +1,148 @@
-// import React from "react";
 import "../styles/about.css";
 
 const AboutContent = () => {
   return (
     <div className="about-content">
-      <h2>About Me</h2>
+      <section className="about-intro">
+        <span className="about-eyebrow">ABOUT ME</span>
 
-      <p>
-        I'm Bryan, a developer focused on building modern web applications and
-        digital experiences.
-      </p>
+        <h2>
+          Building things that are
+          <span> useful, functional, and meaningful.</span>
+        </h2>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-        consequatur officia eos tempora id, accusantium ratione, impedit
-        architecto molestiae doloribus reiciendis sunt atque saepe quas dicta
-        perspiciatis provident voluptatem deleniti eligendi odio illum maiores
-        nulla dolorum! Dignissimos dolorum, et inventore earum cupiditate quod
-        mollitia doloremque natus nesciunt exercitationem? Dicta quaerat
-        consectetur, laboriosam sint, ipsam incidunt unde minus, rerum est
-        temporibus consequuntur debitis sit odio. Distinctio reiciendis est ut,
-        quod nemo fugiat eos quidem dolores laboriosam molestiae deleniti
-        placeat dolorem sunt assumenda vel! Hic sunt, sapiente itaque
-        voluptatibus sint praesentium debitis iure laboriosam error expedita
-        aperiam quaerat, quibusdam, corporis consequuntur molestiae dolores
-        explicabo temporibus fuga veritatis odio? Ab molestias magnam, aliquid
-        consequatur pariatur repellendus magni minus mollitia placeat adipisci,
-        tempora nihil laudantium, nesciunt quisquam voluptate tenetur blanditiis
-        neque nam architecto temporibus. Temporibus sequi suscipit nemo facilis
-        numquam odit molestias ipsam voluptatibus! Cumque voluptatibus in
-        molestiae rem nam repellat odio totam ipsa, consectetur animi nisi vero
-        incidunt ducimus omnis consequatur. Recusandae numquam alias praesentium
-        harum amet sapiente labore? Hic ducimus illo, culpa odit inventore
-        eveniet doloribus. Rem eos aspernatur eligendi debitis. Aliquam error
-        ullam rerum veniam? Repellat fuga earum accusantium minima culpa
-        consequatur asperiores eaque iusto commodi, neque a, consectetur odit
-        enim saepe veniam amet nostrum autem vero aperiam eligendi labore,
-        veritatis doloribus iure? Sapiente quas labore hic, repudiandae ipsa
-        eligendi facilis voluptatibus, dolor tenetur dignissimos, esse
-        doloremque quidem beatae eaque nam quibusdam! Praesentium possimus
-        suscipit, sit quaerat modi cupiditate ullam. Atque nemo animi eaque,
-        magni qui quisquam aut alias exercitationem hic vel commodi neque
-        officiis voluptatem pariatur mollitia sed aspernatur quia dolores eius
-        iusto. Optio officiis labore sed repudiandae perferendis voluptate, odit
-        ipsam, minima iste quidem animi eveniet illum dignissimos ducimus
-        tenetur quaerat accusantium nostrum, odio magni itaque fugiat! Cumque
-        suscipit iure exercitationem? Iusto eos nam facere eveniet accusantium
-        corporis tenetur, vero, sed similique possimus consequuntur voluptatibus
-        dolore soluta nulla et molestiae suscipit ea dignissimos magni! Iste non
-        nulla, laudantium voluptas odit fugit hic obcaecati, explicabo harum
-        adipisci totam tempora odio id saepe placeat tempore quae. Odit eius
-        voluptatum saepe aliquid libero enim dolorem! Hic excepturi ullam
-        voluptate veniam reprehenderit laborum cumque, ratione laboriosam quos
-        quam? Minus dolores dignissimos excepturi optio ea. Commodi, dolorum.
-        Ipsum reprehenderit assumenda omnis, quia aspernatur perspiciatis
-        similique? Ut animi eum porro, facere maxime ipsum unde beatae! Eligendi
-        labore molestias praesentium eum architecto libero in accusamus, et
-        veritatis totam. Nostrum repellendus blanditiis ipsa nesciunt eligendi
-        rem? Distinctio obcaecati repellat necessitatibus aut excepturi
-        explicabo, quia recusandae porro ab iusto sequi possimus aliquam quas
-        consequuntur dolores ipsa aspernatur at fugit unde vero accusantium
-        enim. Temporibus tenetur et corrupti accusamus est quasi, delectus,
-        sapiente eius, sit fugiat repellendus labore ab ipsa laudantium
-        deleniti. Ipsum tempore, dolor id debitis hic tempora voluptas pariatur
-        rem unde, ex nulla possimus. Rem quasi maiores inventore repellat
-        voluptatem ratione laboriosam dolor! Sint at officia placeat blanditiis
-        ipsa exercitationem est et doloremque? Non alias cumque, commodi
-        voluptatem culpa rerum, officiis temporibus repellat blanditiis
-        consequuntur, pariatur voluptatum laudantium omnis! Natus repellendus
-        modi ratione fuga hic asperiores, quasi animi esse repellat nesciunt,
-        soluta adipisci inventore quae similique eaque quis voluptate, ducimus
-        maxime qui dolores error dolor. Numquam commodi quasi enim ratione
-        reprehenderit voluptatum harum aliquam blanditiis qui quia quos ut
-        delectus odit laudantium ullam fugiat eos laboriosam dolor quas
-        accusamus, culpa id eius dolorum? Aperiam error soluta possimus
-        temporibus rerum est quaerat labore, accusamus debitis maiores fugit,
-        animi adipisci expedita facilis voluptatibus tempore. Exercitationem
-        eligendi maiores non, distinctio possimus magni adipisci et nihil
-        placeat, rem, sunt reprehenderit molestias aliquam perspiciatis aut
-        quisquam eum consequatur. Cumque quos placeat alias impedit laudantium
-        aperiam consequuntur quod odio quam possimus. Nulla suscipit cumque
-        consequuntur, perspiciatis fugit dolor nam error a voluptas est, porro
-        numquam voluptate, reprehenderit quae! Veniam, quidem aliquam, deserunt,
-        vel placeat ea natus maiores doloremque quae recusandae eveniet.
-        Repudiandae laborum corporis, dolore maxime eum perspiciatis reiciendis
-        ut. Incidunt fugiat odio aspernatur, error harum reprehenderit esse nemo
-        quibusdam consequuntur, tempore deserunt? Neque doloribus enim
-        reprehenderit nulla velit inventore illo aliquid earum odit deserunt
-        temporibus ipsum fugit excepturi, sequi voluptas. Veritatis, excepturi
-        provident aperiam maiores magni unde earum, eaque numquam nam nobis
-        similique a dignissimos corporis, voluptatem doloribus itaque vitae quas
-        repellat? Laudantium laborum, corrupti minima explicabo incidunt rem
-        animi reiciendis dolore odio fugit? Maiores sequi, veritatis fuga itaque
-        ratione id eius repudiandae minima doloribus soluta corporis nemo fugiat
-        rem, debitis consequuntur esse facere assumenda? Totam a iste
-        reprehenderit ipsa sapiente vitae labore eos asperiores. Magni
-        repellendus perferendis perspiciatis reiciendis doloribus quo saepe
-        nobis, minima numquam asperiores voluptatibus facere dolorem nemo illum
-        quae sequi ullam molestiae sit molestias quod. Harum laborum deserunt
-        beatae dolorum sunt necessitatibus error delectus eum ipsum, aliquid
-        adipisci impedit quaerat repudiandae aliquam iste at autem amet sint
-        eaque quia ratione quas quam iure aperiam! Provident animi sequi
-        dolores, commodi aperiam voluptate repellat repudiandae reprehenderit!
-        Id tenetur est expedita a harum beatae repellendus consequatur in rerum
-        laudantium fugiat reiciendis soluta facere quae nemo aliquam quaerat
-        velit, quidem tempora asperiores maiores at labore placeat? Eligendi
-        soluta, praesentium perferendis unde quo eius suscipit, asperiores
-        doloremque sunt cupiditate delectus iure cum blanditiis enim repellat
-        culpa aliquid maxime veniam voluptate? Quibusdam, expedita cum voluptas
-        magnam officia excepturi nam accusantium asperiores dignissimos optio
-        soluta sequi enim exercitationem ipsa doloremque maiores aperiam tempore
-        quis aliquid saepe quos, itaque architecto. Maiores sit odit suscipit
-        amet tempore quisquam accusamus nisi? Dolores atque consectetur
-        doloremque quod hic magnam facilis voluptatum? Nulla accusamus beatae
-        tenetur asperiores esse autem? Tempora, unde distinctio dolores esse
-        reprehenderit nostrum dolore tempore ab, cumque illum ex consectetur,
-        similique maxime consequuntur commodi sed quae officia omnis expedita
-        voluptates saepe quibusdam. Nobis labore iusto aspernatur asperiores
-        dignissimos tempora repellat illum, saepe alias vero, officia
-        perferendis est repudiandae. Optio fugiat odit doloribus, placeat
-        dolorem, cumque alias dolore officiis perferendis amet non consectetur
-        suscipit in provident omnis possimus magni dignissimos dolor totam earum
-        architecto! Dicta iure consequatur nemo ea repudiandae recusandae quis
-        facere vero quibusdam. Ducimus cum libero, sed aspernatur explicabo
-        labore reiciendis reprehenderit nemo voluptatibus veritatis harum
-        voluptate numquam quibusdam ab obcaecati. Impedit dolorem voluptates
-        sint minima.
-      </p>
+        <p className="about-lead">
+          I'm Bryan, a developer and project manager with a background in web
+          development, software development, and technology-driven projects. I
+          enjoy turning ideas into practical digital experiences—from
+          applications and websites to systems designed to solve real-world
+          problems.
+        </p>
+      </section>
 
-      {/* Your actual About page goes here */}
+      <section className="about-section">
+        <h3>A little about me</h3>
+
+        <p>
+          My journey in technology started with development, where I learned how
+          software works from the ground up. Over time, I became interested not
+          only in writing code, but also in understanding the bigger picture:
+          why something needs to be built, who it is for, and how it can
+          actually make someone's work or experience better.
+        </p>
+
+        <p>
+          That eventually led me into project management and technical
+          coordination. Working across both sides of a project has given me a
+          different perspective—I can understand technical requirements while
+          also thinking about timelines, communication, usability, and the
+          people ultimately using the product.
+        </p>
+
+        <p>
+          I enjoy working on projects where technology has a clear purpose,
+          especially when there is an opportunity to learn something new along
+          the way.
+        </p>
+      </section>
+
+      <section className="about-section">
+        <h3>What I do</h3>
+
+        <div className="about-grid">
+          <div className="about-card">
+            <span className="about-card-number">01</span>
+            <h4>Web Development</h4>
+            <p>
+              Building responsive and modern web experiences using technologies
+              such as React, TypeScript, PHP, Laravel, and MySQL.
+            </p>
+          </div>
+
+          <div className="about-card">
+            <span className="about-card-number">02</span>
+            <h4>Software Development</h4>
+            <p>
+              Experience working with applications, APIs, databases, Android
+              development, and systems that connect different technologies
+              together.
+            </p>
+          </div>
+
+          <div className="about-card">
+            <span className="about-card-number">03</span>
+            <h4>Project Management</h4>
+            <p>
+              Helping turn ideas into organized, actionable projects through
+              planning, coordination, documentation, communication, and
+              technical understanding.
+            </p>
+          </div>
+
+          <div className="about-card">
+            <span className="about-card-number">04</span>
+            <h4>Problem Solving</h4>
+            <p>
+              I enjoy investigating problems, breaking them into smaller pieces,
+              and finding practical solutions instead of simply working around
+              them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-section">
+        <h3>My experience</h3>
+
+        <p>
+          I've worked across different types of technology projects, from
+          business applications and web systems to projects involving mapping,
+          smart-city technology, data, and connected devices.
+        </p>
+
+        <p>
+          My development experience includes React and TypeScript, PHP and
+          Laravel, MySQL, Node.js, Android development, and hybrid mobile
+          technologies. I've also worked with tools and infrastructure such as
+          Docker, RabbitMQ, Firebase, Cloudflare, and Nginx.
+        </p>
+
+        <p>
+          On the project management side, I've worked with distributed teams and
+          technology-focused projects involving research, planning, technical
+          requirements, data workflows, and product development.
+        </p>
+      </section>
+
+      <section className="about-section">
+        <h3>Currently</h3>
+
+        <p>
+          I'm continuing to grow as a developer while expanding my skills in
+          cloud technologies, DevOps, automation, and AI-assisted development.
+          I'm especially interested in finding ways to combine development and
+          project management to build better products from both the technical
+          and business perspectives.
+        </p>
+      </section>
+
+      <section className="about-section about-closing">
+        <div>
+          <span className="about-eyebrow">BEYOND THE CODE</span>
+
+          <h3>
+            Always learning.
+            <br />
+            Always building.
+          </h3>
+
+          <p>
+            Technology changes quickly, and that's one of the things I enjoy
+            most about this field. There's always another problem to solve,
+            another technology to understand, and another idea worth building.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
