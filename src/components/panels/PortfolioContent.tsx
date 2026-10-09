@@ -161,12 +161,6 @@ const PortfolioContent = ({
     onCaseStudyModalChange?.(selectedProject !== null);
   }, [selectedProject, onCaseStudyModalChange]);
 
-  useEffect(() => {
-    return () => {
-      onCaseStudyModalChange?.(false);
-    };
-  }, [onCaseStudyModalChange]);
-
   const closeModal = () => {
     setSelectedProject(null);
   };

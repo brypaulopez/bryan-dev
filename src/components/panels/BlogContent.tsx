@@ -84,12 +84,6 @@ const BlogContent = ({ onCaseStudyModalChange }: BlogContentProps) => {
     onCaseStudyModalChange?.(selectedPost !== null);
   }, [selectedPost, onCaseStudyModalChange]);
 
-  useEffect(() => {
-    return () => {
-      onCaseStudyModalChange?.(false);
-    };
-  }, [onCaseStudyModalChange]);
-
   const closePost = () => {
     setSelectedPost(null);
   };
