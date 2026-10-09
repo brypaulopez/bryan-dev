@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/blog.css";
 
 type BlogPost = {
@@ -73,8 +73,22 @@ const posts: BlogPost[] = [
   },
 ];
 
-const BlogContent = () => {
+type BlogContentProps = {
+  onCaseStudyModalChange?: (isOpen: boolean) => void;
+};
+
+const BlogContent = ({ onCaseStudyModalChange }: BlogContentProps) => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+
+  useEffect(() => {
+    onCaseStudyModalChange?.(selectedPost !== null);
+  }, [selectedPost, onCaseStudyModalChange]);
+
+  useEffect(() => {
+    return () => {
+      onCaseStudyModalChange?.(false);
+    };
+  }, [onCaseStudyModalChange]);
 
   const closePost = () => {
     setSelectedPost(null);

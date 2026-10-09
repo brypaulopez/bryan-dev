@@ -7,9 +7,13 @@ import ContactContent from "./ContactContent";
 
 type PanelContentProps = {
   title: string;
+  onCaseStudyModalChange?: (isOpen: boolean) => void;
 };
 
-export default function PanelContent({ title }: PanelContentProps) {
+export default function PanelContent({
+  title,
+  onCaseStudyModalChange,
+}: PanelContentProps) {
   switch (title) {
     case "About":
       return <AboutContent />;
@@ -18,13 +22,15 @@ export default function PanelContent({ title }: PanelContentProps) {
       return <ServicesContent />;
 
     case "Portfolio":
-      return <PortfolioContent />;
+      return (
+        <PortfolioContent onCaseStudyModalChange={onCaseStudyModalChange} />
+      );
 
     case "Resume":
       return <ResumeContent />;
 
     case "Blog":
-      return <BlogContent />;
+      return <BlogContent onCaseStudyModalChange={onCaseStudyModalChange} />;
 
     case "Contact":
       return <ContactContent />;

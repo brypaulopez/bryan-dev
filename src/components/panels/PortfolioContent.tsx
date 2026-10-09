@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/portoflio.css";
 
 type Project = {
@@ -148,8 +148,24 @@ const projects: Project[] = [
   },
 ];
 
-const PortfolioContent = () => {
+type PortfolioContentProps = {
+  onCaseStudyModalChange?: (isOpen: boolean) => void;
+};
+
+const PortfolioContent = ({
+  onCaseStudyModalChange,
+}: PortfolioContentProps) => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    onCaseStudyModalChange?.(selectedProject !== null);
+  }, [selectedProject, onCaseStudyModalChange]);
+
+  useEffect(() => {
+    return () => {
+      onCaseStudyModalChange?.(false);
+    };
+  }, [onCaseStudyModalChange]);
 
   const closeModal = () => {
     setSelectedProject(null);

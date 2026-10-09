@@ -38,6 +38,7 @@ export default function Panel({
   onNavigate,
 }: PanelProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false);
   const panelRef = useRef<HTMLElement>(null);
   const width = window.innerWidth;
   const marqueeText = PANEL_MARQUEE[title] || `${title} • `;
@@ -196,16 +197,23 @@ export default function Panel({
           <div className="panel-center">
             <h2 className="panel-heading">{title}</h2>
 
-            {isExpanded && <PanelContent title={title} />}
+            {isExpanded && (
+              <PanelContent
+                title={title}
+                onCaseStudyModalChange={setIsCaseStudyOpen}
+              />
+            )}
           </div>
 
           {/* Click hint / Close button */}
-          <button
-            className="panel-action-btn"
-            onClick={(e) => handleClick(e, isExpanded ? "Close" : "Expand")}
-          >
-            {isExpanded ? "Close" : "Expand"}
-          </button>
+          {!isCaseStudyOpen && (
+            <button
+              className="panel-action-btn"
+              onClick={(e) => handleClick(e, isExpanded ? "Close" : "Expand")}
+            >
+              {isExpanded ? "Close" : "Expand"}
+            </button>
+          )}
         </div>
       )}
     </section>
