@@ -1,84 +1,45 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# my-portfolio
-My own Portfolio
-=======
-=======
->>>>>>> 96e529b (V1 of my Portfolio)
-# React + TypeScript + Vite
+# Bryan Lopez — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio! This project showcases my background, technical skills, selected projects, and experience in software development.
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A personal portfolio website built to present my work, technical expertise, and professional journey as a developer. It features a modern, responsive interface with dedicated sections for my introduction, services, portfolio, resume, blog, and contact information.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React, TypeScript
+- **Build Tool:** Vite
+- **Routing:** React Router
+- **Styling:** CSS
+- **PDF Viewer:** React PDF
+- **Deployment:** GitHub Pages
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Responsive design for desktop, tablet, and mobile devices
+- Interactive navigation with animated section transitions
+- Dedicated pages for About, Services, Portfolio, Resume, Blog, and Contact
+- Embedded resume viewer
+- Contact section for professional inquiries
+- Reusable React components and TypeScript
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Live Demo
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Visit my portfolio: [Bryan Lopez — Developer Portfolio](https://bryanpaulopez.github.io/bryan-dev/)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Source Code
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Explore the repository: [GitHub — brypaulopez/bryan-dev](https://github.com/brypaulopez/bryan-dev)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Contact
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-<<<<<<< HEAD
->>>>>>> 96e529b (V1 of my Portfolio)
-=======
->>>>>>> 96e529b (V1 of my Portfolio)
+- **GitHub:** [@brypaulopez](https://github.com/brypaulopez)
+- **LinkedIn:** [Bryan Paulo Lopez](https://www.linkedin.com/in/bryan-paulo-lopez-20a683303/)
+- **Email:** [brypaulopez@gmail.com](mailto:brypaulopez@gmail.com)
+
+---
+
+Built with React, TypeScript, and a passion for creating practical, user-friendly digital experiences.
+
+© 2026 Bryan Lopez. All rights reserved.
